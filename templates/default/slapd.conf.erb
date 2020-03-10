@@ -64,6 +64,11 @@ rootdn          "cn=<%= node['openldap']['cn'] %>,<%= node['openldap']['basedn']
 rootpw          <%= node['openldap']['rootpw'] %>
 directory       "<%= node['openldap']['db_dir'] %>"
 lastmod         on
+<% if node['openldap']['dbconfig']['overlays'] -%>
+  <% node['openldap']['dbconfig']['overlays'].each do |overlay| -%>
+overlay <%= overlay %>
+  <% end %>
+<% end %>
 
 <% if node['openldap']['database'] == 'hdb' -%>
 dbconfig set_cachesize <%= node['openldap']['dbconfig']['set_cachesize'] %>
