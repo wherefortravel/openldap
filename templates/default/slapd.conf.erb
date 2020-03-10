@@ -66,9 +66,9 @@ directory       "<%= node['openldap']['db_dir'] %>"
 lastmod         on
 <% if node['openldap']['dbconfig']['overlays'] -%>
   <% node['openldap']['dbconfig']['overlays'].each do |overlay| -%>
-overlay <%= overlay['name'] %>
-     <%- if overlay['params'] -%>
-       <%- overlay['params'].each do |line| -%>
+overlay <%= overlay[:name] %>
+     <%- if overlay[:params] -%>
+       <%- overlay[:params].each do |line| -%>
 <%= line %>
        <%- end -%>
      <%- end -%>
