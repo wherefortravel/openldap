@@ -56,7 +56,7 @@ chain-idassert-bind       bindmethod="simple"
                           credentials="<%= node['openldap']['chain']['credentials'] %>"
                           mode="self"
 chain-tls   start
-chain-return-error        TRUE
+chain-return-error        false
 <% end %>
 
 
