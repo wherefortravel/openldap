@@ -48,6 +48,17 @@ moduleload       syncprov
 # The tool-threads parameter sets the actual amount of cpu's that is used
 # for indexing.
 tool-threads     1
+<% if node['openldap']['chain_enabled'] -%>
+overlay chain
+chain-uri                 "<%= node['openldap']['chain']]'chain_uri'] %>"
+chain-idassert-bind       bindmethod="simple"
+                          binddn="<%= node['openldap']['chain']['binddn'] %>"
+                          credentials="<%= node['openldap']['chain']['credentialss'] %>"
+                          mode="self"
+chain-tls   start
+chain-return-error        TRUE
+<% end -%>
+
 
 #######################################################################
 # Specific Backend Directives for hdb:
