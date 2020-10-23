@@ -50,14 +50,14 @@ moduleload       syncprov
 tool-threads     1
 <% if node['openldap']['chain_enabled'] -%>
 overlay chain
-chain-uri                 "<%= node['openldap']['chain']]'chain_uri'] %>"
+chain-uri                 "<%= node['openldap']['chain']['chain_uri'] %>"
 chain-idassert-bind       bindmethod="simple"
                           binddn="<%= node['openldap']['chain']['binddn'] %>"
-                          credentials="<%= node['openldap']['chain']['credentialss'] %>"
+                          credentials="<%= node['openldap']['chain']['credentials'] %>"
                           mode="self"
 chain-tls   start
 chain-return-error        TRUE
-<% end -%>
+<% end %>
 
 
 #######################################################################
