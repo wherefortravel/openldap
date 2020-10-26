@@ -49,9 +49,8 @@ moduleload       syncprov
 # for indexing.
 tool-threads     1
 <% if node['openldap']['authz_policy'] -%>
-  authz-policy   <%= node['openldap']['authz_policy'] %>
+authz-policy   <%= node['openldap']['authz_policy'] %>
 <% end -%>
--
 <% if node['openldap']['chain_enabled'] -%>
 overlay chain
 chain-uri                 "<%= node['openldap']['chain']['chain_uri'] %>"
