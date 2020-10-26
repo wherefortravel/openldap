@@ -48,8 +48,8 @@ moduleload       syncprov
 # The tool-threads parameter sets the actual amount of cpu's that is used
 # for indexing.
 tool-threads     1
-<% if node['openldap']['authz-policy'] -%>
-  authz-policy   <%= node['openldap']['authz-policy'] %>
+<% if node['openldap']['authz_policy'] -%>
+  authz-policy   <%= node['openldap']['authz_policy'] %>
 <% end -%>
 -
 <% if node['openldap']['chain_enabled'] -%>
