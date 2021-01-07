@@ -21,7 +21,7 @@ action :install do
 
     cookbook_file "#{node['openldap']['preseed_dir']}/slapd.seed" do
       source 'slapd.seed'
-      cookbook 'openldap'
+      cookbook 'openldap2'
       mode '0600'
       owner 'root'
       group node['root_group']
