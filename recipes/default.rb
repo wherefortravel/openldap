@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-openldap_install 'Install packages' do
+openldap-w2_install 'Install packages' do
   package_action node['openldap']['package_install_action']
 end
 
